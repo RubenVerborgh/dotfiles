@@ -9,3 +9,7 @@ fi
 for f in $BIN/dotfiles/bash/program_config/*; do
   source $f;
 done
+
+for f in $BIN/dotfiles/bash/completion/*; do
+  source $f;
+done

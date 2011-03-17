@@ -3,5 +3,3 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 alias gitgc='du -hs .git;git gc --aggressive --prune;du -hs .git'
-
-source ~/.git-completion.bash
