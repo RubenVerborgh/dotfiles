@@ -3,3 +3,4 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 alias gitgc='du -hs .git;git gc --aggressive --prune;du -hs .git'
+alias gitroot='cd $(git rev-parse --show-cdup)'
