@@ -1,0 +1,5 @@
+set guifont=Monaco:h13
+set antialias
+set encoding=utf-8
+set lines=25 columns=100
+set guioptions-=T         " Hide toolbar.
