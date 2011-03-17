@@ -1,0 +1,13 @@
+######## PATHS ########
+
+# my bin path
+export PATH=$BIN:$PATH
+
+# my tools
+export PATH=~/Library/Tools/:$PATH
+
+
+####### PROGRAMS #######
+
+# editor
+export EDITOR=$BIN/vim

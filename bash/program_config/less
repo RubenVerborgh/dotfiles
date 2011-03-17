@@ -1,0 +1,3 @@
+# enable mouse scrolling
+# https://bugs.launchpad.net/ubuntu/+source/git-core/+bug/326460
+export LESS=R

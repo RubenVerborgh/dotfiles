@@ -1,0 +1,2 @@
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+alias portclean='du -sh /opt; sudo port clean --all installed; sudo port -f uninstall inactive; du -sh /opt'
