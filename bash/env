@@ -6,6 +6,10 @@ export PATH=$BIN:$PATH
 # my tools
 export PATH=~/Library/Tools/:$PATH
 
+# custom paths
+if [ -f ~/.paths ]; then
+  source ~/.paths
+fi
 
 ####### PROGRAMS #######
 
