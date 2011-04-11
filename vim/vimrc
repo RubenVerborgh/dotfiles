@@ -57,3 +57,11 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru} set ft=ruby " these files are also Ruby code
+
+autocmd BufWriteCmd *.html,*.css,*.haml,*.scss,*.md :call RefreshBrowsers()
+function! RefreshBrowsers()
+  if &modified
+    write
+    silent !osascript ~/.vim/scripts/refreshbrowsers.scpt
+  endif
+endfunction
