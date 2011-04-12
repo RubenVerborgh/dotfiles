@@ -56,8 +56,7 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,Vagrantfile,config.ru} set ft=ruby " these files are also Ruby code
-
+"Refresh browsers when saving HTML, CSS and related files
 autocmd BufWriteCmd *.html,*.css,*.haml,*.scss,*.md :call RefreshBrowsers()
 function! RefreshBrowsers()
   if &modified
