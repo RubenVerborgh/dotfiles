@@ -1,2 +1,19 @@
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-alias portclean='du -sh /opt; sudo port clean --all installed; sudo port -f uninstall inactive; du -sh /opt'
+
+function portclean {
+  echo "Calculating current size of installed ports…"
+  local OLDPORTSIZE=`du -sh /opt`
+  echo $OLDPORTSIZE
+  
+  echo "Cleaning up ports…"
+  sudo port clean --all installed
+  
+  echo "Uninstalling inactive ports…"
+  sudo port -f uninstall inactive
+  
+  echo "Calculating current size of installed ports…"
+  local NEWPORTSIZE=`du -sh /opt`
+  
+  echo "Port size was:" $OLDPORTSIZE
+  echo "Port size is: " $NEWPORTSIZE
+}
