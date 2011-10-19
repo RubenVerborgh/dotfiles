@@ -15,3 +15,6 @@ fi
 
 # editor
 export EDITOR=$BIN/vim
+
+# ignore ls in history
+export HISTIGNORE="ls"
