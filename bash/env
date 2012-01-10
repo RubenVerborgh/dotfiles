@@ -16,5 +16,5 @@ fi
 # editor
 export EDITOR=$BIN/vim
 
-# ignore ls in history
-export HISTIGNORE="ls"
+# ignore duplicates, ls, ll, and commands starting with spaces
+export HISTIGNORE="&:l[sl]:[ \t]*"
