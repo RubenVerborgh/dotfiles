@@ -33,7 +33,7 @@ function t {
 
 # Load individual program configuration
 for configFile in $dotfiles/bash/program_config/*_config; do
-  . $configFile;
+  . $configFile
 done
 
 # Set up bash completion
