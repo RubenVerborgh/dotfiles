@@ -66,6 +66,8 @@ colorscheme habilight
 
 map <F2> :NERDTreeToggle<CR>
 
+autocmd FileType mkd,tex set spell            "always spell check these files
+
 
 """"""""""""""""""""""""""
 " Vim-LaTeX configuration
