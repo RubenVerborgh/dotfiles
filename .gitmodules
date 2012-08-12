@@ -16,3 +16,6 @@
 [submodule "vim/bundle/refreshbrowsers"]
 	path = vim/bundle/refreshbrowsers
 	url = git@github.com:RubenVerborgh/RefreshBrowsers.git
+[submodule "vim/bundle/latex"]
+	path = vim/bundle/latex
+	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex

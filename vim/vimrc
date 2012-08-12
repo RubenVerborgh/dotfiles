@@ -76,3 +76,32 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 map <F2> :NERDTreeToggle<CR>
+
+
+""""""""""""""""""""""""""
+" Vim-LaTeX configuration
+""""""""""""""""""""""""""
+let g:Tex_MultipleCompileFormats='pdf, aux'		" pdf and aux files need multiple compilations
+set grepprg=grep\ -nH\ $* 										" make grep always show file name for Latex-Suite
+let g:tex_flavor='latex'											" .tex files should be recognized as TeX
+
+autocmd FileType tex setlocal indentexpr=			" disable automated indentation
+let g:Tex_AdvancedMath = 0										" disable advanced math functions
+
+" Viewer synchronization settings
+let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode --synctex=1 $*'
+let g:Tex_ViewRule_pdf = 'Skim'
+let g:Tex_ViewRule_pdf = 'skimdisplayline'
+let g:Tex_TreatMacViewerAsUNIX = 1
+
+let g:Tex_IgnoredWarnings =
+\"Underfull\n".
+\"Overfull\n".
+\"specifier changed to\n".
+\"You have requested\n".
+\"Missing number, treated as zero.\n".
+\"There were undefined references\n".
+\"Citation %.%# undefined\n".
+\"Marginpar on page %.%# moved.\n".
+\"LaTeX Font Warning:"
+let g:Tex_IgnoreLevel = 9
