@@ -19,3 +19,6 @@
 [submodule "vim/bundle/latex"]
 	path = vim/bundle/latex
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
