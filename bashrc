@@ -1,19 +1,21 @@
-if [ ! -n "${BIN+x}" ]; then
-  export BIN=~/Library/bin
-fi
+# Find dotfiles base path
+bashrc=`readlink ~/.bashrc`
+dotfiles=`dirname $bashrc`
 
-. $BIN/dotfiles/bash/env
-. $BIN/dotfiles/bash/config
-. $BIN/dotfiles/bash/aliases
+# Set up bash
+. $dotfiles/bash/env
+. $dotfiles/bash/config
+. $dotfiles/bash/aliases
 
-for f in $BIN/dotfiles/bash/program_config/*_config; do
+# Set up programs
+for f in $dotfiles/bash/program_config/*_config; do
   source $f;
 done
 
+# Set up completion
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
-
-for f in $BIN/dotfiles/bash/completion/*_completion; do
+for f in $dotfiles/bash/completion/*_completion; do
   source $f;
 done

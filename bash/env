@@ -1,10 +1,7 @@
 ######## PATHS ########
 
-# my bin path
-export PATH=$BIN:$PATH
-
-# my tools
-export PATH=~/Library/Tools:$PATH
+# add dotfiles bin path
+export PATH=$dotfiles/bin:$PATH
 
 # custom paths
 if [ -f ~/.paths ]; then
@@ -14,7 +11,7 @@ fi
 ####### PROGRAMS #######
 
 # editor
-export EDITOR=$BIN/vim
+export EDITOR=vim
 
-# ignore duplicates, ls, ll, and commands starting with spaces
+# make bash history ignore duplicates, ls, ll, and commands starting with spaces
 export HISTIGNORE="&:l[sl]:[ ]*"
