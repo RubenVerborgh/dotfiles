@@ -17,4 +17,4 @@ fi
 export EDITOR=$BIN/vim
 
 # ignore duplicates, ls, ll, and commands starting with spaces
-export HISTIGNORE="&:l[sl]:[ \t]*"
+export HISTIGNORE="&:l[sl]:[ ]*"
