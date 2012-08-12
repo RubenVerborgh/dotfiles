@@ -78,3 +78,4 @@ function! RefreshBrowsers()
     silent !osascript ~/.vim/scripts/refreshbrowsers.scpt
   endif
 endfunction
+map <F2> :NERDTreeToggle<CR>
