@@ -8,6 +8,9 @@ runtime macros/matchit.vim        " Load the matchit plugin.
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
+set linebreak                     " Only break at word boundaries
+set display=lastline              " Always show the last line
+
 set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
@@ -49,6 +52,12 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 colorscheme habilight
+
+" move by visible lines, not by actual lines
+:nnoremap j gj
+:nnoremap k gk
+:nnoremap <up> gk
+:nnoremap <down> gj
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
