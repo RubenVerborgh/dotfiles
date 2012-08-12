@@ -1,5 +1,0 @@
-# prompt
-PS1='\[\e[1;36m\]\h:\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[0;31m\]$(__git_ps1)\[\e[m\]$ '
-
-# fix forward-search-history (C-s) - http://nathanpowell.org/blog/archives/632
-stty stop undef
