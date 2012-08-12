@@ -75,12 +75,4 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-"Refresh browsers when saving HTML, CSS and related files
-autocmd BufWriteCmd *.html,*.css,*.haml,*.scss,*.md :call RefreshBrowsers()
-function! RefreshBrowsers()
-  if &modified
-    write
-    silent !osascript ~/.vim/bundle/refreshbrowsers/scripts/refreshbrowsers.scpt
-  endif
-endfunction
 map <F2> :NERDTreeToggle<CR>
