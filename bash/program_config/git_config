@@ -4,3 +4,5 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 alias gitgc='du -hs ./$(git rev-parse --show-cdup).git;git gc --aggressive --prune=now;du -hs ./$(git rev-parse --show-cdup).git'
 alias gitroot='cd $(git rev-parse --show-cdup)'
+
+. $dotfiles/bash/program_config/git_prompt
