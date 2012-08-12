@@ -1,3 +1,8 @@
+" Load pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
+
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
@@ -75,7 +80,7 @@ autocmd BufWriteCmd *.html,*.css,*.haml,*.scss,*.md :call RefreshBrowsers()
 function! RefreshBrowsers()
   if &modified
     write
-    silent !osascript ~/.vim/scripts/refreshbrowsers.scpt
+    silent !osascript ~/.vim/bundle/refreshbrowsers/scripts/refreshbrowsers.scpt
   endif
 endfunction
 map <F2> :NERDTreeToggle<CR>
