@@ -39,6 +39,8 @@ set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 set smartindent                  " Automatic indentation
+" Don't remove indentation on empty lines
+:inoremap <CR> <CR>x<BS>
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
