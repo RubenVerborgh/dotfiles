@@ -8,14 +8,14 @@ dotfiles=`dirname $bashrc`
 . $dotfiles/bash/aliases
 
 # Set up programs
-for f in $dotfiles/bash/program_config/*_config; do
-  source $f;
+for configFile in $dotfiles/bash/program_config/*_config; do
+  . $configFile;
 done
 
 # Set up completion
 if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
+  . /opt/local/etc/bash_completion
 fi
-for f in $dotfiles/bash/completion/*_completion; do
-  source $f;
+for completionFile in $dotfiles/bash/completion/*_completion; do
+  . $completionFile
 done
