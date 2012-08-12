@@ -42,6 +42,8 @@ set smartindent                  " Automatic indentation
 " Don't remove indentation on empty lines
 :inoremap <CR> <CR>x<BS>
 
+au BufRead * normal zR           " Open unfolded
+
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
