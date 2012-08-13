@@ -45,7 +45,8 @@ set tabstop=2                     " Global tab width.
 set shiftwidth=2                  " And again, related.
 set expandtab                     " Use spaces instead of tabs
 set smartindent                   " Automatic indentation
-:inoremap <CR> <CR>x<BS>          " Don't remove indentation on empty lines
+" Don't remove indentation on empty lines
+:inoremap <CR> <CR>x<BS>
 
 au BufRead * normal zR            " Open unfolded
 
