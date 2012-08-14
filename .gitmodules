@@ -28,3 +28,9 @@
 [submodule "vim/bundle/less"]
 	path = vim/bundle/less
 	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = git://github.com/tpope/vim-surround/
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = git://github.com/tpope/vim-repeat
