@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # Find dotfiles base path
 bashrc=`readlink ~/.bashrc`
 dotfiles=`dirname $bashrc`
