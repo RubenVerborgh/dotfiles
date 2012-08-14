@@ -1,4 +1,10 @@
-export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-alias ls='ls -h'
-alias ll='ls -lG'
+# Find the right color flag, depending on the ls version
+if ls --color > /dev/null 2>&1; then
+  colorFlag="--color"
+else
+  colorFlag="-G"
+fi
+
+alias ls='ls -h $colorFlag'
+alias ll='ls -l'
