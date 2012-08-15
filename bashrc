@@ -12,11 +12,11 @@ if [ -f ~/.paths ]; then
 fi
 
 # Load individual program configuration
-for configFile in $dotfiles/bash/program_config/*_config; do
+for configFile in $dotfiles/config/programs/*_config; do
   . $configFile
 done
 
 # Set up individual program completion
-for completionFile in $dotfiles/bash/completion/*_completion; do
+for completionFile in $dotfiles/config/completion/*_completion; do
   . $completionFile
 done
