@@ -2,7 +2,13 @@
 [ -z "$PS1" ] && return
 
 # Find dotfiles base path
-bashrc=`readlink ~/.bashrc`
+if readlink -f ~/.bashrc > /dev/null 2>&1; then
+  # If readlink supports the -f option, we need it to obtain the full path.
+  bashrc=`readlink -f ~/.bashrc`
+else
+  # If -f is not supported, readlink returns the full path anyway.
+  bashrc=`readlink ~/.bashrc`
+fi
 dotfiles=`dirname $bashrc`
 
 # Set up paths
