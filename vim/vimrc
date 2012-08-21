@@ -63,18 +63,18 @@ colorscheme habiLight
 
 map <F2> :NERDTreeToggle<CR>      " Toggle NERDTree with F2
 
-autocmd FileType mkd,tex set spell            " Always spell check these files
+autocmd FileType mkd,tex set spell             " Always spell check these files
 
 
 """"""""""""""""""""""""""
 " Vim-LaTeX configuration
 """"""""""""""""""""""""""
-let g:Tex_MultipleCompileFormats='pdf, aux'		" pdf and aux files need multiple compilations
-set grepprg=grep\ -nH\ $* 										" Make grep always show file name for Latex-Suite
-let g:tex_flavor='latex'											" .tex files should be recognized as TeX
+let g:Tex_MultipleCompileFormats='pdf, aux'    " pdf and aux files need multiple compilations
+set grepprg=grep\ -nH\ $*                      " Make grep always show file name for Latex-Suite
+let g:tex_flavor='latex'                       " .tex files should be recognized as TeX
 
-autocmd FileType tex setlocal indentexpr=			" Disable automated indentation
-let g:Tex_AdvancedMath = 0										" Disable advanced math functions
+autocmd FileType tex setlocal indentexpr=      " Disable automated indentation
+let g:Tex_AdvancedMath = 0                     " Disable advanced math functions
 
 " Viewer synchronization settings
 let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode --synctex=1 $*'
