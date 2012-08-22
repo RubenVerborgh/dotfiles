@@ -1,0 +1,5 @@
+# Useful alternatives to the sudo command
+for alternative in pls plz please isaid fuckin fucking
+do
+  alias $alternative='sudo'
+done
