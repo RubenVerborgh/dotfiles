@@ -1,1 +1,1 @@
-source $HOME/.rbenv/completions/rbenv.bash
+[ -f $HOME/.rbenv/completions/rbenv.bash ] && source $HOME/.rbenv/completions/rbenv.bash
