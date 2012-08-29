@@ -1,2 +1,4 @@
 # Set vim as default editor
 export EDITOR=vim
+# Open multiple files in tabs by default
+alias mvim='mvim -p'
