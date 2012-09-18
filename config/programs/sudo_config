@@ -1,3 +1,6 @@
+# Allow alias expansion after sudo
+alias sudo='sudo '
+
 # Useful alternatives to the sudo command
 for alternative in pls plz please isaid fuckin fucking
 do
