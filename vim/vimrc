@@ -97,5 +97,3 @@ let g:Tex_IgnoredWarnings =
 \"Marginpar on page %.%# moved.\n".
 \"LaTeX Font Warning:"
 let g:Tex_IgnoreLevel = 9
-
-let g:Imap_UsePlaceHolders = 0                 " Don't use placeholders
