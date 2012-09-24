@@ -34,3 +34,6 @@
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = git://github.com/tpope/vim-repeat
+[submodule "vim/bundle/trailing-whitespace"]
+	path = vim/bundle/trailing-whitespace
+	url = git://github.com/bronson/vim-trailing-whitespace.git
