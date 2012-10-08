@@ -37,3 +37,6 @@
 [submodule "vim/bundle/trailing-whitespace"]
 	path = vim/bundle/trailing-whitespace
 	url = git://github.com/bronson/vim-trailing-whitespace.git
+[submodule "vim/bundle/coffeescript"]
+	path = vim/bundle/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
