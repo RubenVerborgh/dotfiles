@@ -1,8 +1,6 @@
 # Allow alias expansion after sudo
-alias sudo='sudo '
-
-# Useful alternatives to the sudo command
-for alternative in pls plz please isaid fuckin fucking
+# and provide useful alternatives to the sudo command
+for alternative in sudo pls plz please isaid fuckin fucking
 do
-  alias $alternative='sudo'
+  alias $alternative='sudo '
 done
