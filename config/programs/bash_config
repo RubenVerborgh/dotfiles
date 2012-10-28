@@ -20,4 +20,7 @@ function t {
 		tell application \"System Events\" to tell process \"Terminal\" to keystroke \"t\" using command down
 		tell application \"Terminal\" to do script \"clear;cd \\\"$(PWD)\\\";clear\" in selected tab of the front window
 	" > /dev/null 2>&1
+	osascript -e "
+		tell application \"System Events\" to tell process \"Terminal\" to keystroke \"k\" using command down
+	" > /dev/null 2>&1
 }
