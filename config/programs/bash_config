@@ -18,9 +18,16 @@ PS1+=':\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[0;31m\]$(__git_ps1)\[\e[m\]$ '
 function t {
 	osascript -e "
 		tell application \"System Events\" to tell process \"Terminal\" to keystroke \"t\" using command down
-		tell application \"Terminal\" to do script \"clear;cd \\\"$(PWD)\\\";clear\" in selected tab of the front window
+		tell application \"Terminal\" to do script \"clear;cd \\\"$(pwd)\\\";clear\" in selected tab of the front window
 	" > /dev/null 2>&1
 	osascript -e "
 		tell application \"System Events\" to tell process \"Terminal\" to keystroke \"k\" using command down
 	" > /dev/null 2>&1
 }
+
+# Provide a dummy osascript implementation if it doesn't exist
+if ! which osascript > /dev/null 2>&1; then
+  function osascript {
+    echo > /dev/null
+  }
+fi
