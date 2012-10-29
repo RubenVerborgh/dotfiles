@@ -1,8 +1,11 @@
 # Make bash history ignore duplicates, ls, ll, and commands starting with spaces
 export HISTIGNORE="&:l[sl]:[ ]*"
 
-# fix forward-search-history (C-s) - http://nathanpowell.org/blog/archives/632
+# Fix forward-search-history (C-s) - http://nathanpowell.org/blog/archives/632
 stty stop undef
+
+# Enable vi editing mode
+set -o vi
 
 # Informative prompt with git repository info
 if [ `uname` == "Darwin" ]; then
