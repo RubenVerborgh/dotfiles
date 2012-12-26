@@ -1,3 +1,9 @@
 # enable mouse scrolling
 # https://bugs.launchpad.net/ubuntu/+source/git-core/+bug/326460
 export LESS=R
+
+# Cover up when mistakenly using `less` instead of `ls`
+less() {
+  # Use `ls` on directories, actual `less` on others
+  [ -d "$1" ] && ls $@ || `which less` $@
+}
