@@ -43,3 +43,6 @@
 [submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/json"]
+	path = vim/bundle/json
+	url = git://github.com/vim-scripts/JSON.vim.git
