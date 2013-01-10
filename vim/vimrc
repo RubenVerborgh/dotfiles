@@ -66,6 +66,8 @@ map <F10> :nohl<CR>
 
 autocmd FileType mkd,tex set spell             " Always spell check these files
 
+set wildignore+=node_modules/**                " Don't search inside Node.js modules
+
 
 """"""""""""""""""""""""""
 " Vim-LaTeX configuration
