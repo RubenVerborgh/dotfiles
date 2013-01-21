@@ -50,7 +50,8 @@ au BufRead * normal zR            " Open unfolded
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%=%-16(\ %l,%c\ %)%P
 
-colorscheme habiLight
+set t_Co=256
+colorscheme wombat256mod
 
 " Move by visible lines, not by actual lines
 :nnoremap j gj

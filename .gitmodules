@@ -46,3 +46,6 @@
 [submodule "vim/bundle/json"]
 	path = vim/bundle/json
 	url = git://github.com/vim-scripts/JSON.vim.git
+[submodule "vim/bundle/wombat256"]
+	path = vim/bundle/wombat256
+	url = git://github.com/vim-scripts/wombat256.vim
