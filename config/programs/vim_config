@@ -1,4 +1,10 @@
 # Set vim as default editor
 export EDITOR=vim
-# Open multiple files in tabs by default
-alias mvim='mvim -p'
+
+if hash mvim 2>/dev/null; then
+  # In vim GUI, open multiple files in tabs by default
+  alias mvim='mvim -p'
+else
+  # If no GUI available, make the command an alias for regular vim
+  alias mvim=vim
+fi
