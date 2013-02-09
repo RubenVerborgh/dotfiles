@@ -49,3 +49,6 @@
 [submodule "vim/bundle/wombat256"]
 	path = vim/bundle/wombat256
 	url = git://github.com/vim-scripts/wombat256.vim
+[submodule "vim/bundle/transpose"]
+	path = vim/bundle/transpose
+	url = git://github.com/salsifis/vim-transpose.git
