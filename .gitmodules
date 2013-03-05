@@ -52,3 +52,4 @@
 [submodule "vim/bundle/transpose"]
 	path = vim/bundle/transpose
 	url = git://github.com/salsifis/vim-transpose.git
+  ignore = untracked
