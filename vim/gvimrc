@@ -3,3 +3,4 @@ set antialias
 set encoding=utf-8
 set guioptions-=T         " Hide toolbar.
 set number                " Show line numbers.
+set tabpagemax=30         " Allow more tabs to open
