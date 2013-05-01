@@ -16,9 +16,6 @@
 [submodule "vim/bundle/refreshbrowsers"]
 	path = vim/bundle/refreshbrowsers
 	url = git://github.com/RubenVerborgh/RefreshBrowsers.git
-[submodule "vim/bundle/latex"]
-	path = vim/bundle/latex
-	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
@@ -53,3 +50,6 @@
 	path = vim/bundle/transpose
 	url = git://github.com/salsifis/vim-transpose.git
   ignore = untracked
+[submodule "vim/bundle/LaTeX-Box"]
+	path = vim/bundle/LaTeX-Box
+	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
