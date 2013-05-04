@@ -51,13 +51,16 @@ set mouse=a                       " Enable mouse in all modes
 set spell                         " Always spell check
 
 " Move by visible lines, not by actual lines
-:nnoremap k gk
-:nnoremap j gj
-:nnoremap <up> gk
-:nnoremap <down> gj
+nnoremap k gk
+nnoremap j gj
+nnoremap <up> gk
+nnoremap <down> gj
 
 " Clear search highlight with F10
 map <F10> :nohl<CR>
+
+" Set convenient leader key alternative
+nmap ù \
 
 
 " ------------
