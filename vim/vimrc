@@ -74,7 +74,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 filetype plugin indent on
 
-" Color scheme
+" Color schemes
+Bundle 'baeuml/summerfruit256.vim'
 Bundle 'vim-scripts/wombat256.vim'
 colorscheme wombat256mod
 set t_Co=256
