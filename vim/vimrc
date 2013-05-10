@@ -76,8 +76,9 @@ filetype plugin indent on
 
 " Color scheme
 Bundle 'vim-scripts/wombat256.vim'
-set t_Co=256
 colorscheme wombat256mod
+set t_Co=256
+syntax on
 
 " Motions and operations
 Bundle 'tpope/vim-repeat'
