@@ -109,6 +109,7 @@ let g:LatexBox_ignore_warnings=
   \ 'Overfull',
   \ 'specifier changed to',
   \ 'Token not allowed in a PDF string',
+  \ 'Package glossaries Warning',
   \ ]
 map <silent> <Leader>ls :silent
     \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g
