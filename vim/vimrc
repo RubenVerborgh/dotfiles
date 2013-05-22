@@ -76,8 +76,9 @@ filetype plugin indent on
 
 " Color schemes
 Bundle 'baeuml/summerfruit256.vim'
+Bundle 'tomasr/molokai'
 Bundle 'vim-scripts/wombat256.vim'
-colorscheme wombat256mod
+colorscheme molokai
 set t_Co=256
 syntax on
 
