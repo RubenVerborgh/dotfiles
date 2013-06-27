@@ -2,7 +2,8 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
-alias gitgc='du -hs ./$(git rev-parse --show-cdup).git;git gc --aggressive --prune=now;du -hs ./$(git rev-parse --show-cdup).git'
+alias gitsize='du -hs ./$(git rev-parse --show-cdup).git'
+alias gitgc='git gc --aggressive --prune=now'
 alias gitpush='gitgc;git push'
 alias gitroot='git rev-parse && cd "$(git rev-parse --show-cdup)"'
 
