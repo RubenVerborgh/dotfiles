@@ -113,6 +113,7 @@ let g:LatexBox_ignore_warnings=
   \ 'Package natbib Warning: Empty `thebibliography',
   \ 'Marginpar on page',
   \ 'Package microtype Warning',
+  \ 'Label(s) may have changed.',
   \ ]
 map <silent> <Leader>ls :silent
     \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g
