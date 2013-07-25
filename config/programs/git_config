@@ -4,7 +4,8 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 alias gitsize='du -hs ./$(git rev-parse --show-cdup).git'
 alias gitgc='git gc --aggressive --prune=now'
-alias gitpush='gitgc;git push'
+alias gitpush='git push'
+alias gitpull='git pull'
 alias gitroot='git rev-parse && cd "$(git rev-parse --show-cdup)"'
 
 . $dotfiles/config/programs/git_prompt
