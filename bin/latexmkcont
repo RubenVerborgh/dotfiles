@@ -1,0 +1,1 @@
+latexmk -pdf -pvc -interaction=nonstopmode -silent -synctex=1 -file-line-error "$@"
