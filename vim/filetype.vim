@@ -7,6 +7,7 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.json set filetype=json
   au! BufRead,BufNewFile *.tex	set filetype=tex
   au! BufRead,BufNewFile *.md 	set filetype=markdown
+  au! BufRead,BufNewFile *.less set filetype=less
   au! BufRead,BufNewFile * call s:DetectByShebang()
 augroup END
 
