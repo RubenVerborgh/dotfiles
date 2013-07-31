@@ -114,6 +114,8 @@ let g:LatexBox_ignore_warnings=
   \ 'Marginpar on page',
   \ 'Package microtype Warning',
   \ 'Label(s) may have changed.',
+  \ 'Font shape',
+  \ 'Size substitutions with differences',
   \ ]
 map <silent> <Leader>ls :silent
     \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g
