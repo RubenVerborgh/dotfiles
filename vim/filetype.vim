@@ -8,6 +8,8 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.tex	set filetype=tex
   au! BufRead,BufNewFile *.md 	set filetype=markdown
   au! BufRead,BufNewFile *.less set filetype=less
+  au! BufRead,BufNewFile *.ttl  set filetype=n3
+  au! BufRead,BufNewFile *.n3   set filetype=n3
   au! BufRead,BufNewFile * call s:DetectByShebang()
 augroup END
 
