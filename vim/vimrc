@@ -120,6 +120,7 @@ let g:LatexBox_ignore_warnings=
   \ 'Font shape',
   \ 'Size substitutions with differences',
   \ ]
+let g:LatexBox_latexmk_async=1
 map <silent> <Leader>ls :silent
     \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g
 		\ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
