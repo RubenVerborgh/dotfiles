@@ -74,11 +74,11 @@ cmap w!! w !sudo tee > /dev/null %
 " ------------
 
 " Bundle manager
+syntax on
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-filetype plugin indent on
 
 " Color schemes
 Bundle 'baeuml/summerfruit256.vim'
@@ -86,7 +86,6 @@ Bundle 'tomasr/molokai'
 Bundle 'vim-scripts/wombat256.vim'
 colorscheme molokai
 set t_Co=256
-syntax on
 
 " Motions and operations
 Bundle 'tpope/vim-repeat'
@@ -131,3 +130,6 @@ map <silent> <Leader>ls :silent
 " Various utilities
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'RubenVerborgh/RefreshBrowsers'
+
+" Switch filetype on after all bundles are loaded
+filetype plugin indent on
