@@ -20,11 +20,12 @@ PS1+=':\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[0;31m\]$(__git_ps1)\[\e[m\]$ '
 # Create a t function that opens a new tab with the current directory
 function t {
 	osascript -e "
-		tell application \"System Events\" to tell process \"Terminal\" to keystroke \"t\" using command down
-		tell application \"Terminal\" to do script \"clear;cd \\\"$(pwd)\\\";clear\" in selected tab of the front window
+		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"t\" using command down
+		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"cd \\\"$(pwd)\\\"\n\"
 	" > /dev/null 2>&1
-	osascript -e "
-		tell application \"System Events\" to tell process \"Terminal\" to keystroke \"k\" using command down
+  sleep 0.1
+  osascript -e "
+		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"k\" using command down
 	" > /dev/null 2>&1
 }
 
