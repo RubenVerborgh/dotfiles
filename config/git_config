@@ -1,6 +1,7 @@
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_DESCRIBE_STYLE=branch
 
 alias gitsize='du -hs ./$(git rev-parse --show-cdup).git'
 alias gitgc='git gc --aggressive --prune=now'
