@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'rdf/rdfa'
+require 'rdf/turtle'
+
+prefixes = {}
+graph = RDF::Graph.load ARGV[0], :format => :rdfa, :prefixes => prefixes
+puts graph.dump :turtle, :prefixes => prefixes
