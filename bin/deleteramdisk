@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+ramdiskname=`diskutil list | grep "RAM Disk" | sed -e 's/^.* //'`
+diskutil eject /dev/$ramdiskname
