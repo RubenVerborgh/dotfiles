@@ -8,3 +8,4 @@ fi
 
 alias ls='ls -h $colorFlag'
 alias ll='ls -l'
+alias l='ll'
