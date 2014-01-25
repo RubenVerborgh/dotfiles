@@ -35,3 +35,6 @@ if ! which osascript > /dev/null 2>&1; then
     echo > /dev/null
   }
 fi
+
+# Aliases
+alias steve=jobs
