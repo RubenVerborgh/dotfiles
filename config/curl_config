@@ -1,1 +1,3 @@
 alias curtle='curl -H "Accept: text/turtle"'
+alias curlson='curl -H "Accept: application/json"'
+alias curld='curl -H "Accept: application/ld+json"'
