@@ -1,0 +1,1 @@
+export BUMPMESSAGE="Release version %s of the npm package."
