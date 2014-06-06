@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+cat /var/run/reboot-required.pkgs
