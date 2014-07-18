@@ -62,6 +62,7 @@ map <F10> :nohl<CR>
 
 " Set convenient leader key alternative
 nmap ù \
+vmap ù \
 
 " Opposite of Shift+J
 nmap <Leader>j i<CR><Esc>
@@ -127,6 +128,9 @@ let g:LatexBox_latexmk_async=1
 map <silent> <Leader>ls :silent
     \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g
 		\ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
+" Wrap words with a TeX command
+nmap <Leader>lm ysiw}i\<ESC>a
+vmap <Leader>lm <Plug>LatexWrapSelection
 
 " Various utilities
 Bundle 'bronson/vim-trailing-whitespace'
