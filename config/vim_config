@@ -8,3 +8,7 @@ else
   # If no GUI available, make the command an alias for regular vim
   alias mvim=vim
 fi
+
+# Add aliases for opening in existing vim windows
+alias vimtab='vim --remote-tab-silent'
+alias mvimtab='mvim --remote-tab-silent'
