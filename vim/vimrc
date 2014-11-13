@@ -108,6 +108,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'vim-scripts/JSON.vim'
+Bundle 'salsifis/vim-transpose.git'
 
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 let g:LatexBox_latexmk_options="-synctex=1"
