@@ -42,7 +42,7 @@ set shiftwidth=2                  " And again, related.
 set expandtab                     " Use spaces instead of tabs
 set smartindent                   " Automatic indentation
 
-au BufRead * normal zR            " Open unfolded
+set nofoldenable                  " Don't fold when opening
 
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%=%-16(\ %l,%c\ %)%P
