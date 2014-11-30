@@ -82,12 +82,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Color schemes
+" Color schemes and appearance
 Bundle 'baeuml/summerfruit256.vim'
 Bundle 'tomasr/molokai'
 Bundle 'vim-scripts/wombat256.vim'
 colorscheme molokai
 set t_Co=256
+Bundle 'jszakmeister/vim-togglecursor'
 
 " Motions and operations
 Bundle 'tpope/vim-repeat'
