@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Continuous version of wc
+lines=0
+while read -r line; do
+  ((lines++))
+  echo -ne "\r$lines"
+done
+echo -e "\r$lines"
