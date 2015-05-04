@@ -9,3 +9,5 @@ fi
 alias ls='ls -h $colorFlag'
 alias ll='ls -l'
 alias l='ll'
+alias lla='ll -a'
+alias la='ll -a'
