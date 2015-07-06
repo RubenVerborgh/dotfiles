@@ -52,6 +52,9 @@ set mouse=a                       " Enable mouse in all modes
 
 set spell                         " Always spell check
 
+" Disable ex mode to avoid accidentally entering it
+nnoremap Q <Nop>
+
 " Move by visible lines, not by actual lines
 nnoremap k gk
 nnoremap j gj
