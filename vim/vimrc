@@ -19,6 +19,7 @@ set wildmode=list:longest         " Complete files like a shell.
 set wildignore+=tmp/**            " Don't search inside temporary folders
 set wildignore+=data/**           " Don't search inside data folders
 set wildignore+=node_modules/**   " Don't search inside Node.js modules
+set wildignore+=bower_components/**   " Don't search inside bower modules
 
 set ignorecase                    " Case-insensitive searching,
 set smartcase                     " but case-sensitive if expression contains a capital letter.
