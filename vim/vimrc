@@ -108,6 +108,10 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'scrooloose/nerdtree'
 map <F2> :NERDTreeToggle<CR>
 
+" EditorConfig support
+Bundle 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " File type support
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
