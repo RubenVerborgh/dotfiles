@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+read -p "Do you want to install the dotfiles? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  for file in bash_profile bashrc gvim vim vimrc; do
+    rm -rf ~/.$file 2> /dev/null
+    ln -s $dotfiles/$file ~/.$file
+  done
+fi
