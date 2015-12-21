@@ -1,3 +1,6 @@
+# Use ** to match zero or more subdirectories
+shopt -s globstar
+
 # Make bash history ignore duplicates, ls, ll, and commands starting with spaces
 export HISTIGNORE="&:l[sl]:[ ]*"
 
