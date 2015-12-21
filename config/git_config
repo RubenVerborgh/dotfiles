@@ -3,6 +3,7 @@ GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE=branch
 
+alias g=git
 alias gitsize='du -hs ./$(git rev-parse --show-cdup).git'
 alias gitgc='git gc --aggressive --prune=now'
 alias gitroot='git rev-parse && cd "$(git rev-parse --show-cdup)"'
