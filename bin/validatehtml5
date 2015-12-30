@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+require 'net/http'
+require 'zlib'
+require 'json'
+
+def validate_html file
+  File.open file, "r" do |file|
+    body = StringIO.new
+    gz = Zlib::GzipWriter.new body
+    gz.write file.read
+    gz.close
+    body = body.string
+
+    http = Net::HTTP.new "validator.nu"
+    response = http.start do |http|
+      http.post "/?out=json", body,
+                { 'Content-Type' => 'text/html; charset=utf-8',
+                  'Content-Encoding' => 'gzip' }
+    end
+    result = JSON.parse response.body
+    result["messages"].select{|m| m["type"] == "error"}
+  end
+end
+
+ARGV.each do |file|
+  errors = validate_html file;
+  puts "#{file}: #{errors.empty? ? 'valid' : errors.length.to_s + ' errors'}"
+end
