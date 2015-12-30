@@ -145,7 +145,6 @@ vmap <Leader>lm <Plug>LatexWrapSelection
 
 " Various utilities
 Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'RubenVerborgh/RefreshBrowsers'
 
 " Switch filetype on after all bundles are loaded
 filetype plugin indent on
