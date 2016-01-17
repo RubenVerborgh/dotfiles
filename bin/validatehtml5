@@ -19,10 +19,14 @@ def validate_html file
     end
     result = JSON.parse response.body
     result["messages"].select{|m| m["type"] == "error"}
+                      .sort{|a,b| a["lastLine"] <=> b["lastLine"]}
   end
 end
 
 ARGV.each do |file|
   errors = validate_html file;
   puts "#{file}: #{errors.empty? ? 'valid' : errors.length.to_s + ' errors'}"
+  errors.each do |error|
+    puts "  line #{error["lastLine"]}: #{error["message"]}"
+  end
 end
