@@ -1,11 +1,15 @@
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_DESCRIBE_STYLE=branch
-
+# Set up g alias with autocompletion
 alias g=git
+__git_complete g __git_main
+
+# Define auxiliary commands
 alias gitsize='du -hs ./$(git rev-parse --show-cdup).git'
 alias gitgc='git gc --aggressive --prune=now'
 alias gitroot='git rev-parse && cd "$(git rev-parse --show-cdup)"'
 
+# Set up git prompt
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_DESCRIBE_STYLE=branch
 . $dotfiles/config/git_prompt

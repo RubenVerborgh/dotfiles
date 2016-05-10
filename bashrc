@@ -12,6 +12,6 @@ fi
 export PATH=$dotfiles/bin:$PATH
 [ -f ~/.paths ] && source ~/.paths
 
-# Load individual program configuration and completion
-for file in $dotfiles/{config/*_config,completion/*_completion}; do . $file; done
+# Load individual program completion and configuration
+for file in $dotfiles/{completion/*_completion,config/*_config}; do . $file; done
 unset file
