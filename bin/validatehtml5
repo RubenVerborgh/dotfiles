@@ -17,6 +17,10 @@ def validate_html file
                 { 'Content-Type' => 'text/html; charset=utf-8',
                   'Content-Encoding' => 'gzip' }
     end
+    if response.code >= '500'
+      STDERR.write "Validation service error: #{response.message}\n"
+      exit
+    end
     result = JSON.parse response.body
     result["messages"].select{|m| m["type"] == "error"}
                       .sort{|a,b| a["lastLine"] <=> b["lastLine"]}
