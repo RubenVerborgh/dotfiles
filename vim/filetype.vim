@@ -12,7 +12,10 @@ augroup filetypedetect
 augroup END
 
 " Detected shebangs and corresponding filetype
-let s:shebangtypes = { 'node': 'javascript' }
+let s:shebangtypes = {
+  \'node': 'javascript',
+  \'phantomjs': 'javascript',
+\}
 
 " Detect the filetype by shebang
 fun! s:DetectByShebang()
