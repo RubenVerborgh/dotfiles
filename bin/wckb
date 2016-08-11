@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Calculates the size of a file or pipe in kibibytes
+wc -c "$@" | awk '{printf "%.0fK\n", $1/1024}'

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Calculates the size of a file or pipe in mebibytes
+wc -c "$@" | awk '{printf "%.1fM\n", $1/1024/1024}'
