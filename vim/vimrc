@@ -86,9 +86,7 @@ endif
 call plug#begin()
 
 " Color schemes and appearance
-Plug 'baeuml/summerfruit256.vim'
 Plug 'tomasr/molokai'
-Plug 'vim-scripts/wombat256.vim'
 Plug 'jszakmeister/vim-togglecursor'
 
 " Motions and operations
@@ -104,7 +102,7 @@ Plug 'tpope/vim-fugitive'
 " File navigation
 Plug 'wincent/command-t', { 'do': 'silent! cd ruby/command-t && ruby extconf.rb && make' }
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 map <F2> :NERDTreeToggle<CR>
 
 " EditorConfig support
@@ -112,14 +110,11 @@ Plug 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " File type support
-Plug 'groenewege/vim-less'
-Plug 'kchmck/vim-coffee-script'
-Plug 'othree/html5.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'vim-scripts/JSON.vim'
-Plug 'salsifis/vim-transpose'
-
-Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'groenewege/vim-less',      { 'for': 'less' }
+Plug 'othree/html5.vim',         { 'for': 'html' }
+Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
+Plug 'vim-scripts/JSON.vim',     { 'for': 'json' }
+Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
 let g:LatexBox_latexmk_options="-synctex=1"
 let g:LatexBox_ignore_warnings=
   \['Underfull',
@@ -137,13 +132,14 @@ let g:LatexBox_ignore_warnings=
 let g:LatexBox_latexmk_async=1
 map <silent> <Leader>ls :silent
     \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g
-		\ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
+    \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
 " Wrap words with a TeX command
 nmap <Leader>lm ysiw}i\<ESC>a
 vmap <Leader>lm <Plug>LatexWrapSelection
 
 " Various utilities
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'salsifis/vim-transpose'
 
 call plug#end()
 
