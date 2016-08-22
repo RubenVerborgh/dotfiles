@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+CWD=$(pwd)
+
+echo "Checking if git is installed..."
+if ! which git > /dev/null; then
+  echo "Installing git..."
+  sudo apt-get install -y git
+fi
+
+echo "Checking if dotfiles are installed..."
+if [ -z "$dotfiles" ]; then
+  echo "Installing dotfiles..."
+  mkdir -p ~/bin
+  cd ~/bin
+  git clone --depth 1 https://github.com/RubenVerborgh/dotfiles.git
+  cd dotfiles
+  yes | ./install
+fi
+
+echo "All done."
+cd "$CWD"
