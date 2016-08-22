@@ -13,3 +13,6 @@ echo "Setting up Vim..."
 vim +PlugInstall! +qall 2>/dev/null
 
 echo "Done."
+
+echo "Run the following to activate:"
+echo "  cd && source .bashrc"
