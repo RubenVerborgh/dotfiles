@@ -4,9 +4,10 @@ if [[ ! $REPLY =~ ^(Y|y|()) ]]; then exit; fi
 
 echo "Linking profile files and directories..."
 dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-for file in bash_profile bashrc gvim vim vimrc; do
-  rm -rf ~/.$file 2> /dev/null
-  ln -s $dotfiles/$file ~/.$file
+for file in bash_profile bashrc vim vim/gvimrc vim/vimrc; do
+  homefile=~/.`echo $file | sed -Ee 's/[a-z]+\///'`
+  rm -rf "$homefile" 2>/dev/null
+  ln -s "$dotfiles/$file" "$homefile"
 done
 
 echo "Setting up Vim..."
