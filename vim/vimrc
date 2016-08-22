@@ -147,5 +147,5 @@ Plug 'bronson/vim-trailing-whitespace'
 call plug#end()
 
 " Activate color scheme
-colorscheme molokai
+:silent! colorscheme molokai
 set t_Co=256
