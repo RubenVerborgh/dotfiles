@@ -141,6 +141,7 @@ vmap <Leader>lm <Plug>LatexWrapSelection
 " Various utilities
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'salsifis/vim-transpose'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
