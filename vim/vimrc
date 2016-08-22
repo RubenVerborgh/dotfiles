@@ -114,6 +114,7 @@ Plug 'groenewege/vim-less',      { 'for': 'less' }
 Plug 'othree/html5.vim',         { 'for': 'html' }
 Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
 Plug 'vim-scripts/JSON.vim',     { 'for': 'json' }
+Plug 'pangloss/vim-javascript',  { 'for': 'javascript' }
 Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
 let g:LatexBox_latexmk_options="-synctex=1"
 let g:LatexBox_ignore_warnings=
