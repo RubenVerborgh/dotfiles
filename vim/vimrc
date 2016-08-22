@@ -94,6 +94,8 @@ Plug 'jszakmeister/vim-togglecursor'
 " Motions and operations
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+xmap \\ <Plug>Commentary
+nmap \\ <Plug>CommentaryLine
 Plug 'tpope/vim-surround'
 
 " Git integration
