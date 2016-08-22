@@ -101,9 +101,14 @@ Plug 'tpope/vim-fugitive'
 
 " File navigation
 Plug 'wincent/command-t', { 'do': 'silent! cd ruby/command-t && ruby extconf.rb && make' }
-
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 map <F2> :NERDTreeToggle<CR>
+Plug 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep' ""
+endif
+nnoremap <Leader>f :Ack!<Space>
+
 
 " EditorConfig support
 Plug 'editorconfig/editorconfig-vim'
