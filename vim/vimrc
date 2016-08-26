@@ -155,3 +155,6 @@ call plug#end()
 " Activate color scheme
 :silent! colorscheme molokai
 set t_Co=256
+
+" Remote file editing
+let g:netrw_silent = 1
