@@ -8,7 +8,7 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.tex	set filetype=tex
   au! BufRead,BufNewFile *.ttl  set filetype=n3
   au! BufRead,BufNewFile *.n3   set filetype=n3
-  au! BufRead,BufNewFile * call s:DetectByShebang()
+  au! BufRead,BufWritePre * call s:DetectByShebang()
 augroup END
 
 " Detected shebangs and corresponding filetype
