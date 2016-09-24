@@ -121,6 +121,7 @@ Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
 Plug 'vim-scripts/JSON.vim',     { 'for': 'json' }
 Plug 'pangloss/vim-javascript',  { 'for': 'javascript' }
 Plug 'nginx/nginx',              { 'rtp': 'contrib/vim' }
+autocmd FileType nginx setlocal commentstring=#\ %s
 Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
 let g:LatexBox_latexmk_options="-synctex=1"
 let g:LatexBox_ignore_warnings=
