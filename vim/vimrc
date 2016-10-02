@@ -147,9 +147,11 @@ nmap <Leader>lm ysiw}i\<ESC>a
 vmap <Leader>lm <Plug>LatexWrapSelection
 
 " Autocompletion
-Plug 'Valloric/YouCompleteMe'
-nnoremap <leader>g :YcmCompleter GoTo<CR>
-set completeopt-=preview
+if has("gui_macvim")
+  Plug 'Valloric/YouCompleteMe'
+  nnoremap <leader>g :YcmCompleter GoTo<CR>
+  set completeopt-=preview
+endif
 
 " Various utilities
 Plug 'bronson/vim-trailing-whitespace'
