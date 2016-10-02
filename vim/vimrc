@@ -101,6 +101,7 @@ Plug 'tpope/vim-fugitive'
 
 " File navigation
 Plug 'wincent/command-t', { 'do': 'silent! cd ruby/command-t && ruby extconf.rb && make' }
+let g:CommandTSmartCase = 0
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 map <F2> :NERDTreeToggle<CR>
 Plug 'mileszs/ack.vim'
