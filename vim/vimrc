@@ -156,9 +156,6 @@ endif
 " Various utilities
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'salsifis/vim-transpose'
-Plug 'Raimondi/delimitMate'
-let b:delimitMate_expand_space = 1
-let b:delimitMate_expand_cr = 1
 
 call plug#end()
 
