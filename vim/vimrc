@@ -146,7 +146,7 @@ map <silent> <Leader>ls :silent
 
 " Autocompletion
 if has("gui_macvim")
-  Plug 'Valloric/YouCompleteMe'
+  Plug 'Valloric/YouCompleteMe', { 'for': ['javascript', 'ruby'] }
   nnoremap <leader>g :YcmCompleter GoTo<CR>
   set completeopt-=preview
 endif
