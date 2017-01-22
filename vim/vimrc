@@ -122,6 +122,7 @@ Plug 'groenewege/vim-less',      { 'for': 'less' }
 Plug 'othree/html5.vim',         { 'for': 'html' }
 Plug 'vim-scripts/JSON.vim',     { 'for': 'json' }
 Plug 'pangloss/vim-javascript',  { 'for': 'javascript' }
+Plug 'niklasl/vim-rdf'
 Plug 'rvesse/vim-sparql',        { 'for': 'sparql' }
 Plug 'nginx/nginx',              { 'rtp': 'contrib/vim' }
 autocmd FileType nginx setlocal commentstring=#\ %s
