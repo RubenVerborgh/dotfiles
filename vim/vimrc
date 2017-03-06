@@ -154,7 +154,7 @@ if has("gui_macvim")
 endif
 
 " Various utilities
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'salsifis/vim-transpose'
 
 call plug#end()
