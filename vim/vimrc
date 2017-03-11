@@ -75,6 +75,9 @@ nmap <Leader>j i<CR><Esc>
 " Easily save files when sudo was forgotten
 cmap w!! w !sudo tee > /dev/null %
 
+" Load template on new file
+au BufNewFile * :silent! exec ":0r ~/.vim/templates/template.".expand("%:e")
+
 " ------------
 " Load plugins
 " ------------
