@@ -1,2 +1,2 @@
 # Make a directory and go into it
-function mkcd () { mkdir -p "$@" && cd "$@"; }
+function mkcd () { mkdir -p "$@" && CDPATH= cd "$@"; }
