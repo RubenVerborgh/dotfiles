@@ -149,13 +149,6 @@ map <silent> <Leader>ls :silent
     \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g
     \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
 
-" Autocompletion
-if has("gui_macvim")
-  Plug 'Valloric/YouCompleteMe', { 'for': ['javascript', 'ruby'] }
-  nnoremap <leader>g :YcmCompleter GoTo<CR>
-  set completeopt-=preview
-endif
-
 " Various utilities
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'salsifis/vim-transpose'
