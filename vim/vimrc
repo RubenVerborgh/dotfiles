@@ -103,7 +103,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
 " File navigation
-Plug 'wincent/command-t', { 'do': 'silent! cd ruby/command-t && ruby extconf.rb && make' }
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && /usr/bin/ruby extconf.rb && make' }
 let g:CommandTSmartCase = 0
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 map <F2> :NERDTreeToggle<CR>
