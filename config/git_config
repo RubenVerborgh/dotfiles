@@ -6,6 +6,8 @@ __git_complete g __git_main
 alias gitsize='du -hs ./$(git rev-parse --show-cdup).git'
 alias gitgc='git gc --aggressive --prune=now'
 alias gitroot='git rev-parse && cd "$(git rev-parse --show-toplevel)"'
+alias gsize=gitsize
+alias groot=gitroot
 
 # Set up git prompt
 GIT_PS1_SHOWDIRTYSTATE=1
