@@ -54,7 +54,7 @@ set mouse=a                       " Enable mouse in all modes
 set spell                         " Always spell check
 
 if has('mac')
-  set rubydll=/opt/local/lib/libruby2.4.dylib  " Set Ruby path
+  set rubydll=/opt/local/lib/libruby2.5.dylib  " Set Ruby path
 endif
 
 " Disable ex mode to avoid accidentally entering it
