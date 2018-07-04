@@ -2,7 +2,7 @@
 console.log(process.argv.slice(2).map(encodeHtml).join('\n'));
 
 function encodeHtml (unencoded) {
-  return unencoded.replace(/[^\-+a-zA-Z0-9 \t\n\r(){}\[\]]/g, function (character) {
+  return unencoded.replace(/[^\-+a-zA-Z0-9 \t\n\r(){}\[\]\\\/\.,:;!?=\^$"'#]/g, function (character) {
     switch (character) {
       case '&': return '&amp;';
       case '<': return '&lt;';
