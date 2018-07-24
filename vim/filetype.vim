@@ -4,6 +4,7 @@ endif
 
 " Fix file type detection for these formats
 augroup filetypedetect
+  au! BufRead,BufNewFile *.ts set filetype=typescript
   au! BufRead,BufNewFile *.json set filetype=json
   au! BufRead,BufNewFile *.tex	set filetype=tex
   au! BufRead,BufNewFile *.sparql set filetype=sparql
