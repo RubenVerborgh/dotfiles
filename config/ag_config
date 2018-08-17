@@ -1,1 +1,1 @@
-alias ag="ag --path-to-ignore $dotfiles/.ignore"
+alias ag="ag -W 100 --path-to-ignore $dotfiles/.ignore"
