@@ -1,0 +1,2 @@
+#!/bin/sh
+/Applications/Skim.app/Contents/SharedSupport/displayline -r -b -g "$2" "$1" "$3"
