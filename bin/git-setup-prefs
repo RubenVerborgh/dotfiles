@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+# User
+git config --global user.name  "Ruben Verborgh"
+git config --global user.email "ruben@verborgh.org"
+
+# Core
+git config --global core.editor "vim"
+git config --global core.whitespace "trailing-space,space-before-tab"
+
+# Aliases
+git config --global alias.co    "checkout"
+git config --global alias.c     "commit"
+git config --global alias.ca    "commit -a"
+git config --global alias.cam   "commit -a -m"
+git config --global alias.cl    "clone"
+git config --global alias.clo   "clone"
+git config --global alias.clon  "clone"
+git config --global alias.d     "diff"
+git config --global alias.wdiff "diff --word-diff"
+git config --global alias.s     "status"
+git config --global alias.stsh  "stash"
+git config --global alias.pl    "pull"
+git config --global alias.pul   "pull"
+git config --global alias.pll   "pull"
+git config --global alias.ps    "push"
+git config --global alias.pus   "push"
+git config --global alias.psh   "push"
+git config --global alias.rb    "rebase"
+git config --global alias.ada   "add --a"
+
+# Color
+git config --global color.diff        auto
+git config --global color.status      auto
+git config --global color.branch      auto
+git config --global color.interactive auto
