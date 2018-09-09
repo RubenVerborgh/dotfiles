@@ -10,6 +10,9 @@ for file in bash_profile bashrc vim vim/gvimrc vim/vimrc; do
   ln -s "$dotfiles/$file" "$homefile"
 done
 
+echo "Setting up git..."
+$dotfiles/bin/git-setup-prefs
+
 echo "Setting up Vim..."
 vim +PlugInstall! +qall 2>/dev/null
 
