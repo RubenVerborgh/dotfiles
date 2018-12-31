@@ -1,4 +1,5 @@
-set guifont=Monaco:h13
+set guifont=Menlo:h13
+set linespace=1
 set antialias
 set encoding=utf-8
 set guioptions-=T         " Hide toolbar.
