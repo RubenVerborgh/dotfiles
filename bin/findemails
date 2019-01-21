@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+egrep -oh '[a-zA-Z._0-9\-]+@[a-zA-Z._0-9\-]+' "$@"
