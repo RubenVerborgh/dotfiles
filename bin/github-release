@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+LATEST_RELEASE="$(git describe --tags --abbrev=0)"
+echo "Creating GitHub release for ${LATEST_RELEASE}…"
+EDIT_RELEASE_URL="$(hub release create --draft -m "$LATEST_RELEASE" "$LATEST_RELEASE" | sed -E 's/\/tag\/([^\/]+)$/\/edit\/\1/')"
+open $EDIT_RELEASE_URL
