@@ -99,6 +99,10 @@ xmap \\ <Plug>Commentary
 nmap \\ <Plug>CommentaryLine
 Plug 'tpope/vim-surround'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Git integration
 Plug 'tpope/vim-fugitive'
 
