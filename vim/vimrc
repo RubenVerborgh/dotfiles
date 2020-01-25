@@ -124,11 +124,8 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 Plug 'honza/vim-snippets'
 
-" Git integration
-Plug 'tpope/vim-fugitive'
-
 " File navigation
-Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && /usr/bin/ruby extconf.rb && make' }
+Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && /usr/bin/env ruby extconf.rb && make' }
 let g:CommandTSmartCase = 0
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 map <F2> :NERDTreeToggle<CR>
@@ -137,7 +134,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 nnoremap <Leader>f :Ack!<Space>
-
 
 " EditorConfig support
 Plug 'editorconfig/editorconfig-vim'
@@ -150,7 +146,6 @@ Plug 'groenewege/vim-less',                { 'for': 'less' }
 Plug 'othree/html5.vim',                   { 'for': 'html' }
 Plug 'vim-scripts/JSON.vim',               { 'for': 'json' }
 Plug 'pangloss/vim-javascript',            { 'for': 'javascript' }
-let g:javascript_plugin_flow = 1
 Plug 'leafgarland/typescript-vim',         { 'for': 'typescript' }
 Plug 'niklasl/vim-rdf'
 Plug 'rvesse/vim-sparql',                  { 'for': 'sparql' }
@@ -176,14 +171,18 @@ map <silent> <Leader>ls :silent
     \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
 
 " Various utilities
+Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'salsifis/vim-transpose'
 
 call plug#end()
 
 " Activate color scheme
-:silent! colorscheme molokai
+silent! colorscheme molokai
 set t_Co=256
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Remote file editing
 let g:netrw_silent = 1
