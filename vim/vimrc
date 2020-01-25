@@ -99,6 +99,17 @@ xmap \\ <Plug>Commentary
 nmap \\ <Plug>CommentaryLine
 Plug 'tpope/vim-surround'
 
+" Cycle through yanks on paste
+Plug 'svermeulen/vim-yoink'
+Plug 'svermeulen/vim-subversive'
+let g:yoinkIncludeDeleteOperations = 1
+let g:yoinkSwapClampAtEnds = 0
+nmap <C-p> <plug>(YoinkPostPasteSwapBack)
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+xmap p <plug>(SubversiveSubstitute)
+xmap P <plug>(SubversiveSubstitute)
+
 " Snippets (based on https://stackoverflow.com/a/22253548/476820)
 Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = '<C-n>'
