@@ -181,6 +181,7 @@ call plug#end()
 
 " Activate color scheme
 silent! colorscheme molokai
+highlight Normal guibg=#111111
 set t_Co=256
 if (has("termguicolors"))
   set termguicolors
