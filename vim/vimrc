@@ -49,10 +49,6 @@ set mouse=a                       " Enable mouse in all modes
 
 set spell                         " Always spell check
 
-if has('mac')
-  set rubydll=/usr/local/Cellar/ruby/2.6.1/lib/libruby.2.6.dylib  " Set Ruby path
-endif
-
 " Disable ex mode to avoid accidentally entering it
 nnoremap Q <Nop>
 
