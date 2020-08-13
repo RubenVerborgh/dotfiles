@@ -1,0 +1,2 @@
+#!/bin/sh
+log show --style syslog --predicate 'subsystem == "com.apple.TimeMachine" AND processImagePath CONTAINS "backupd"' --info | grep -v 'Backup already running'
