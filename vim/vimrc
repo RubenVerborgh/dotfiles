@@ -28,7 +28,6 @@ set ruler                         " Show cursor position.
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
-set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set notitle                       " Remove the terminal's title
@@ -42,6 +41,10 @@ set tabstop=2                     " Global tab width.
 set shiftwidth=2                  " And again, related.
 set expandtab                     " Use spaces instead of tabs
 set smartindent                   " Automatic indentation
+
+set wrap                          " Turn on line wrapping
+set breakindent                   " Indent wrapped lines
+set breakindentopt=shift:2        " Indent wrapped lines slightly more
 
 set nofoldenable                  " Don't fold when opening
 
