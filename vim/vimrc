@@ -2,55 +2,55 @@
 " General settings
 " ----------------
 
-set nocompatible                  " Enter vim mode
+set nocompatible                     " Enter vim mode
 
-set showcmd                       " Display incomplete commands.
+set showcmd                          " Display incomplete commands
 
-set linebreak                     " Only break at word boundaries
-set display=lastline              " Always show the last line
+set linebreak                        " Only break at word boundaries
+set display=lastline                 " Always show the last line
 
-set backspace=indent,eol,start    " Intuitive backspacing.
+set backspace=indent,eol,start       " Intuitive backspacing
 
-set hidden                        " Handle multiple buffers better.
+set hidden                           " Handle multiple buffers better
 
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
-set wildignore+=tmp/*             " Don't search inside temporary folders
-set wildignore+=data/*            " Don't search inside data folders
+set wildmenu                         " Enhanced command line completion
+set wildmode=list:longest            " Complete files like a shell
+set wildignore+=tmp/*                " Don't search inside temporary folders
+set wildignore+=data/*               " Don't search inside data folders
 set wildignore+=*/node_modules/*     " Don't search inside Node.js modules
 set wildignore+=*/bower_components/* " Don't search inside bower modules
 
-set ignorecase                    " Case-insensitive searching,
-set smartcase                     " but case-sensitive if expression contains a capital letter.
+set ignorecase                       " Case-insensitive searching,
+set smartcase                        " but case-sensitive when typing capitals
 
-set ruler                         " Show cursor position.
+set ruler                            " Show cursor position
 
-set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
+set hlsearch                         " Highlight matches
+set incsearch                        " Highlight matches as you type
 
-set scrolloff=3                   " Show 3 lines of context around the cursor.
+set scrolloff=3                      " Show 3 lines of context around the cursor
 
-set notitle                       " Remove the terminal's title
+set notitle                          " Remove the terminal's title
 
-set visualbell                    " No beeping.
+set visualbell                       " No beeping
 
-set nobackup                      " Don't make a backup before overwriting a file.
-set directory=/tmp,.              " Keep swap files in one location
+set nobackup                         " No backup before overwriting
+set directory=/tmp,.                 " Keep swap files in one location
 
-set tabstop=2                     " Global tab width.
-set shiftwidth=2                  " And again, related.
-set expandtab                     " Use spaces instead of tabs
-set smartindent                   " Automatic indentation
+set tabstop=2                        " Global tab width
+set shiftwidth=2                     " And again, related
+set expandtab                        " Use spaces instead of tabs
+set smartindent                      " Automatic indentation
 
-set wrap                          " Turn on line wrapping
-set breakindent                   " Indent wrapped lines
-set breakindentopt=shift:2        " Indent wrapped lines slightly more
+set wrap                             " Turn on line wrapping
+set breakindent                      " Indent wrapped lines
+set breakindentopt=shift:2           " Indent wrapped lines slightly more
 
-set nofoldenable                  " Don't fold when opening
+set nofoldenable                     " Don't fold when opening
 
-set mouse=a                       " Enable mouse in all modes
+set mouse=a                          " Enable mouse in all modes
 
-set spell                         " Always spell check
+set spell                            " Always spell check
 
 " Disable ex mode to avoid accidentally entering it
 nnoremap Q <Nop>
