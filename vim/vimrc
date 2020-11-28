@@ -52,6 +52,8 @@ set mouse=a                          " Enable mouse in all modes
 
 set spell                            " Always spell check
 
+set completeopt=menu,popup           " Complete via menu and show popup
+
 " Disable ex mode to avoid accidentally entering it
 nnoremap Q <Nop>
 
