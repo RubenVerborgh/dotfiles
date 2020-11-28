@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+for file in "$@"; do
+  ffmpeg -y -i "$file" -b:a 256K -vn "${file%.*}.mp3"
+done
