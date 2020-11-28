@@ -114,7 +114,11 @@ xmap P <plug>(SubversiveSubstitute)
 Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = '<C-n>'
 if has('gui_running')
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+  Plug 'ycm-core/YouCompleteMe', {
+    \'do': './install.py --ts-completer',
+    \'commit': '4e480a317',
+    \'frozen': 1
+  \}
 end
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
