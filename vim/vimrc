@@ -54,6 +54,9 @@ set spell                            " Always spell check
 
 set completeopt=menu,popup           " Complete via menu and show popup
 
+set ballooneval                      " Enable balloon tooltips
+set balloondelay=0
+
 " Disable ex mode to avoid accidentally entering it
 nnoremap Q <Nop>
 
@@ -155,7 +158,8 @@ Plug 'othree/html5.vim',                   { 'for': 'html' }
 Plug 'mattn/emmet-vim',                    { 'for': 'html' }
 Plug 'vim-scripts/JSON.vim',               { 'for': 'json' }
 Plug 'pangloss/vim-javascript',            { 'for': 'javascript' }
-Plug 'leafgarland/typescript-vim',         { 'for': 'typescript' }
+Plug 'herringtondarkholme/yats',           { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi',                   { 'for': 'typescript' }
 Plug 'niklasl/vim-rdf'
 Plug 'rvesse/vim-sparql',                  { 'for': 'sparql' }
 Plug 'nginx/nginx',                        { 'rtp': 'contrib/vim' }
