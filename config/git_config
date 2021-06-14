@@ -1,6 +1,7 @@
 # Set up g alias with autocompletion
 alias g=git
-__git_complete g __git_main
+[ -n "$BASH" ] && __git_complete g __git_main
+[ -n "$ZSH_NAME" ] && compdef g=git
 
 # Define auxiliary commands
 alias gitsize='du -hs ./$(git rev-parse --show-cdup).git'

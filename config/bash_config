@@ -1,14 +1,17 @@
+# Only run on Bash
+[ -z "$BASH" ] && return
+
+# Enable vi editing mode
+set -o vi
+
 # Use ** to match zero or more subdirectories
 shopt -s globstar
 
-# Make bash history ignore duplicates, ls, ll, and commands starting with spaces
+# Make history ignore duplicates, ls, ll, and commands starting with spaces
 export HISTIGNORE="&:l[sl]:[ ]*"
 
 # Fix forward-search-history (C-s) - http://nathanpowell.org/blog/archives/632
 stty stop undef
-
-# Enable vi editing mode
-set -o vi
 
 # Informative prompt with git repository info
 if [ `uname` == "Darwin" ]; then
@@ -19,25 +22,6 @@ else
   PS1='\[\e[1;32m\]\u@\h'
 fi
 PS1+=':\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[0;31m\]$(__git_ps1)\[\e[m\]$ '
-
-# Create a t function that opens a new tab with the current directory
-function t {
-	osascript -e "
-		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"t\" using command down
-		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"cd \\\"$(pwd)\\\"\n\"
-	" > /dev/null 2>&1
-  sleep 0.1
-  osascript -e "
-		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"k\" using command down
-	" > /dev/null 2>&1
-}
-
-# Provide a dummy osascript implementation if it doesn't exist
-if ! which osascript > /dev/null 2>&1; then
-  function osascript {
-    echo > /dev/null
-  }
-fi
 
 # Aliases
 alias steve=jobs

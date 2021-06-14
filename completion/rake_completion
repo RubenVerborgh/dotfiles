@@ -1,1 +1,0 @@
-complete -C $dotfiles/completion/rake_completion.rb -o default rake

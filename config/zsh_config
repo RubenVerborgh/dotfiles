@@ -1,0 +1,35 @@
+# Only run on Zsh
+[ -z "$ZSH_NAME" ] && return
+
+# Enable vi editing mode
+set -o vi
+
+# Make history ignore duplicates, ls, ll, and commands starting with spaces
+setopt histignoredups
+setopt histfindnodups
+setopt histreduceblanks
+setopt histnostore
+function zshaddhistory() {
+  emulate -L zsh
+  if ! [[ "$1" =~ "(^ls|^ll)" ]] ; then
+      print -sr -- "${1%%$'\n'}"
+      fc -p
+  else
+      return 1
+  fi
+}
+
+# Informative prompt with git repository info
+setopt PROMPT_SUBST
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+  # On OS X, show host in blue.
+  PROMPT='%F{cyan}%m:%F{green}%1~'
+else
+  # On Linux and others, show username and host in green.
+  PROMPT='%F{green}%n@%m:%1~'
+fi
+PROMPT+='%F{red}$(__git_ps1)'
+PROMPT+='%F{black}%% '
+
+# Aliases
+alias steve=jobs

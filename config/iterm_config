@@ -1,0 +1,18 @@
+# Create a t function that opens a new tab with the current directory
+function t {
+	osascript -e "
+		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"t\" using command down
+		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"cd \\\"$(pwd)\\\"\n\"
+	" > /dev/null 2>&1
+  sleep 0.1
+  osascript -e "
+		tell application \"System Events\" to tell process \"iTerm\" to keystroke \"k\" using command down
+	" > /dev/null 2>&1
+}
+
+# Provide a dummy osascript implementation if it doesn't exist
+if ! which osascript > /dev/null 2>&1; then
+  function osascript {
+    echo > /dev/null
+  }
+fi
