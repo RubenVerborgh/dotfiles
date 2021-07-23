@@ -4,6 +4,10 @@
 # Enable vi editing mode
 set -o vi
 
+# Enable Ctrl-R
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
 # Make history ignore duplicates, ls, ll, and commands starting with spaces
 setopt histignoredups
 setopt histfindnodups
