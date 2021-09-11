@@ -3,7 +3,7 @@
 
 set -e
 
-KEY="$HOME/.ssh/id_rsa.pub"
+KEY="$HOME/.ssh/id_ed25519.pub"
 
 if [ ! -f $KEY ];then
     echo "Private key not found at $KEY. Please create it by issuing the following command:"
