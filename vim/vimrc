@@ -136,15 +136,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 Plug 'honza/vim-snippets'
 
 " File navigation
-Plug 'wincent/command-t', { 'do': 'cd ruby/command-t/ext/command-t && /usr/bin/env ruby extconf.rb && make' }
-let g:CommandTSmartCase = 0
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-map <F2> :NERDTreeToggle<CR>
-Plug 'mileszs/ack.vim'
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-nnoremap <Leader>f :Ack!<Space>
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+let g:fzf_preview_window = []
+nnoremap <silent> <Leader>t :Files<CR>
+nnoremap <silent> <Leader>f :Ag<CR>
 
 " EditorConfig support
 Plug 'editorconfig/editorconfig-vim'
