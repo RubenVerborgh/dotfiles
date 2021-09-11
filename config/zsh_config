@@ -9,19 +9,11 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # Make history ignore duplicates, ls, ll, and commands starting with spaces
+setopt histignorespace
 setopt histignoredups
 setopt histfindnodups
 setopt histreduceblanks
 setopt histnostore
-function zshaddhistory() {
-  emulate -L zsh
-  if ! [[ "$1" =~ "(^ls|^ll)" ]] ; then
-      print -sr -- "${1%%$'\n'}"
-      fc -p
-  else
-      return 1
-  fi
-}
 
 # Informative prompt with git repository info
 setopt PROMPT_SUBST
