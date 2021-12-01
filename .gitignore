@@ -1,4 +1,5 @@
 .netrwhist
+node_modules
 vim/autoload/plug.vim*
 vim/plugged/*
 vim/spell

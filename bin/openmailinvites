@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+// Extracts and opens calendar invites from an email message passed on stdin
+
+const { exec } = require('child_process');
+const { writeFile } = require('fs/promises');
+const { simpleParser } = require('mailparser');
+
+const MIME_CALENDAR = 'text/calendar';
+
+// Read message from stdin and send for processing
+const { stdin } = process;
+const buffers = [];
+stdin.on('data', buffer => buffers.push(buffer));
+stdin.on('end', () => {
+  const body = Buffer.concat(buffers).toString();
+  openInvites(body).catch(console.error);
+});
+
+// Opens invites in the given email body
+async function openInvites(messageBody) {
+  // Avoid parsing messages without an invite
+  if (!messageBody.includes(MIME_CALENDAR))
+    return;
+
+  // Parse the message body and extract any invites
+  const parsed = await simpleParser(messageBody);
+  const invites = parsed.attachments
+    .filter(({ contentType }) => contentType.startsWith(MIME_CALENDAR))
+    .map(({ content }) => content);
+
+  if (invites.length) {
+    // Create .ics files for each invite
+    const inviteFiles = await Promise.all(Object.entries(invites)
+      .map(async ([id, buffer]) => {
+        const filename = `/tmp/invite-${id}.ics`;
+        await writeFile(filename, buffer);
+        return filename;
+      }));
+
+    // Open the invites
+    exec(`open ${inviteFiles.join(' ')}`);
+  }
+}
