@@ -3,3 +3,4 @@ export BUMPMSG=$BUMPMESSAGE
 alias npmvpatch='npm version patch -m "$BUMPMSG"'
 alias npmvminor='npm version minor -m "$BUMPMSG"'
 alias npmvmajor='npm version major -m "$BUMPMSG"'
+npr() { npm run $1 -- "${@:2}"; }
