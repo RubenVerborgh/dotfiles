@@ -1,0 +1,4 @@
+alias kdock='killall -9 Dock'
+alias knode='killall -9 node'
+alias kperl='killall -9 perl'
+alias kruby='killall -9 ruby'
