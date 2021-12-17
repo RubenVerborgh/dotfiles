@@ -127,7 +127,6 @@ if has('gui_running')
 end
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:ycm_filetype_blacklist = {}
 let g:ycm_min_num_identifier_candidate_chars = 8
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger = "<tab>"
