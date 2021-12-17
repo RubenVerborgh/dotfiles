@@ -180,6 +180,7 @@ map <silent> <Leader>ls :silent
     \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p" <CR>
 
 " Various utilities
+Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'salsifis/vim-transpose'
