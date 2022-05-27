@@ -4,6 +4,9 @@
 git config --global user.name  "Ruben Verborgh"
 git config --global user.email "ruben@verborgh.org"
 
+# Init
+git config --global init.defaultBranch main
+
 # Core
 git config --global core.editor "vim"
 git config --global core.whitespace "trailing-space,space-before-tab"
