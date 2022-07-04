@@ -17,15 +17,16 @@ setopt histnostore
 
 # Informative prompt with git repository info
 setopt PROMPT_SUBST
+autoload -U colors && colors
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   # On OS X, show host in blue.
-  PROMPT='%F{cyan}%m:%F{green}%1~'
+  PROMPT='%{$fg[cyan]%}%m:%{$fg[green]%}%1~'
 else
   # On Linux and others, show username and host in green.
-  PROMPT='%F{green}%n@%m:%1~'
+  PROMPT='%{$fg[green]%}%n@%m:%1~'
 fi
-PROMPT+='%F{red}$(__git_ps1)'
-PROMPT+='%F{black}%% '
+PROMPT+='%{$fg[red]%}$(__git_ps1)'
+PROMPT+='%{$reset_color%}%% '
 
 # Aliases
 alias steve=jobs
