@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
-CWD=$(pwd)
+DOTFILES_REPO=https://github.com/RubenVerborgh/dotfiles.git
+DOTFILES_PATH=~/bin/dotfiles
 
-echo "Checking if git is installed..."
+echo "Ensuring git is installed..."
 if ! which git > /dev/null; then
   echo "Installing git..."
-  sudo apt-get install -y git
+  sudo apt-get install -y git || exit 1
 fi
 
 echo "Checking if dotfiles are installed..."
-if [ -z "$dotfiles" ]; then
+if [ ! -d "$DOTFILES_PATH" ]; then
   echo "Installing dotfiles..."
-  mkdir -p ~/bin
-  cd ~/bin
-  git clone --depth 1 https://github.com/RubenVerborgh/dotfiles.git
-  cd dotfiles
-  yes | ./install
-else
-  echo "All done."
+  echo mkdir -p "$(dirname $DOTFILES_PATH)"
+   GIT_TERMINAL_PROMPT=0 git clone --depth 1 $DOTFILES_REPO $DOTFILES_PATH || exit 1
 fi
 
-cd "$CWD"
+echo "Updating and installing dotfiles..."
+pushd "$DOTFILES_PATH"
+yes | ./install || exit 1
+popd
+
+echo "All done."
