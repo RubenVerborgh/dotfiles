@@ -16,3 +16,13 @@ GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_DESCRIBE_STYLE=branch
 . $dotfiles/config/git_prompt
+
+# clone and cd
+gitc()
+{
+  local tmp=$(mktemp)
+  if git clone --progress "$@" 2> >(tee $tmp >&2); then
+    cd "$(awk -F\' '/Cloning into/ {print $2}' $tmp)"
+  fi
+  rm $tmp
+}
