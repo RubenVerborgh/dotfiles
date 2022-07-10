@@ -1,8 +1,11 @@
 # Only run on Zsh
 [ -z "$ZSH_NAME" ] && return
 
+# Don't error on failed globs
+setopt NO_NOMATCH
+
 # Enable vi editing mode
-set -o vi
+setopt vi
 
 # Enable Ctrl-R
 bindkey -v
