@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
-require 'net/http'
-require 'zlib'
 require 'json'
+require 'net/http'
+require 'stringio'
+require 'zlib'
 
 def validate_html file
   File.open file, "r" do |file|
