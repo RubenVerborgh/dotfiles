@@ -4,12 +4,13 @@
 git config --global user.name  "Ruben Verborgh"
 git config --global user.email "ruben@verborgh.org"
 
-# Init
-git config --global init.defaultBranch main
-
-# Core
+# Editing
 git config --global core.editor "vim"
 git config --global core.whitespace "trailing-space,space-before-tab"
+
+# Branches and remotes
+git config --global init.defaultBranch main
+git config --global push.autoSetupRemote true
 
 # Aliases
 git config --global alias.co    "checkout"
