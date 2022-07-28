@@ -1,6 +1,5 @@
-# Set up paths
-export PATH=$dotfiles/bin:$PATH
-[ -f ~/.paths ] && source ~/.paths
+# Initialize local settings
+[ -f ~/.init ] && source ~/.init
 
 # Load completion
 zstyle ':completion:*:*:git:*' script $dotfiles/completion/bash/git-completion.bash
