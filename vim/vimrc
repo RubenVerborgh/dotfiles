@@ -120,9 +120,7 @@ Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = '<C-n>'
 if has('gui_running')
   Plug 'ycm-core/YouCompleteMe', {
-    \'do': './install.py --ts-completer',
-    \'commit': '4e480a317',
-    \'frozen': 1
+    \'do': './install.py --ts-completer'
   \}
 end
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
