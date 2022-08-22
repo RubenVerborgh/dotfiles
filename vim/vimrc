@@ -36,6 +36,7 @@ set visualbell                       " No beeping
 
 set nobackup                         " No backup before overwriting
 set directory=/tmp,.                 " Keep swap files in one location
+set updatetime=100                   " Faster update speed
 
 set tabstop=2                        " Global tab width
 set shiftwidth=2                     " And again, related
@@ -56,6 +57,8 @@ set completeopt=menu,popup           " Complete via menu and show popup
 
 set ballooneval                      " Enable balloon tooltips
 set balloondelay=0
+
+let g:netrw_silent = 1               " No-prompt remote file editing
 
 " Disable ex mode to avoid accidentally entering it
 nnoremap Q <Nop>
@@ -86,6 +89,7 @@ au BufNewFile * :silent! exec ":r ~/.vim/templates/template.".expand("%:e"). "|n
 if empty(glob("~/.vim/autoload/plug.vim"))
   silent exec '!curl -sfLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
+
 call plug#begin()
 
 " Color schemes and appearance
@@ -180,6 +184,7 @@ map <silent> <Leader>ls :silent
 " Various utilities
 Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'salsifis/vim-transpose'
 Plug 'junegunn/vim-easy-align'
@@ -190,11 +195,11 @@ call plug#end()
 
 " Activate color scheme
 silent! colorscheme molokai
-highlight Normal guibg=#111111
+highlight Normal                        guibg=#111111
+highlight GitGutterAdd    guifg=#A6E22E guibg=#232526 ctermfg=Green
+highlight GitGutterChange guifg=#FD971F guibg=#232526 ctermfg=White
+highlight GitGutterDelete guifg=#F92672 guibg=#232526 ctermfg=Red
 set t_Co=256
 if (has("termguicolors"))
   set termguicolors
 endif
-
-" Remote file editing
-let g:netrw_silent = 1
