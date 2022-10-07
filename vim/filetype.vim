@@ -4,12 +4,12 @@ endif
 
 " Fix file type detection for these formats
 augroup filetypedetect
-  au! BufRead,BufNewFile *.json   set filetype=json
-  au! BufRead,BufNewFile *.n3     set filetype=n3
-  au! BufRead,BufNewFile *.pug    set filetype=pug
-  au! BufRead,BufNewFile *.sparql set filetype=sparql
-  au! BufRead,BufNewFile *.tex    set filetype=tex
-  au! BufRead,BufNewFile *.ts     set filetype=typescript
+  au! BufRead,BufNewFile *.json    set filetype=json
+  au! BufRead,BufNewFile *.n3      set filetype=n3
+  au! BufRead,BufNewFile *.sparql  set filetype=sparql
+  au! BufRead,BufNewFile *.graphql set filetype=graphql
+  au! BufRead,BufNewFile *.tex     set filetype=tex
+  au! BufRead,BufNewFile *.ts      set filetype=typescript
   au! BufRead,BufWritePre * call s:DetectByShebang()
 augroup END
 

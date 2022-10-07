@@ -159,8 +159,8 @@ Plug 'herringtondarkholme/yats',           { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi',                   { 'for': 'typescript' }
 Plug 'niklasl/vim-rdf'
 Plug 'rvesse/vim-sparql',                  { 'for': 'sparql' }
+Plug 'jparise/vim-graphql',                { 'for': 'graphql' }
 Plug 'nginx/nginx',                        { 'rtp': 'contrib/vim' }
-Plug 'digitaltoad/vim-pug',                { 'for': 'pug' }
 Plug 'LaTeX-Box-Team/LaTeX-Box',           { 'for': 'tex' }
 let g:LatexBox_latexmk_options="-synctex=1"
 let g:LatexBox_ignore_warnings=
