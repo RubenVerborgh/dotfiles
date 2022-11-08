@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "cozy-ical": "^1.1.22",
     "mailparser": "^3.4.0"
   }
 }

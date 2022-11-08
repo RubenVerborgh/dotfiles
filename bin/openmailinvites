@@ -2,8 +2,13 @@
 // Extracts and opens calendar invites from an email message passed on stdin
 
 const { exec } = require('child_process');
+const { ICalParser } = require('cozy-ical');
 const { writeFile } = require('fs/promises');
 const { simpleParser } = require('mailparser');
+const { promisify } = require('util');
+
+const iCalParser = new ICalParser();
+const parseICal = promisify((s, cb) => iCalParser.parseString(s, cb));
 
 const MIME_CALENDAR = 'text/calendar';
 
@@ -24,14 +29,14 @@ async function openInvites(messageBody) {
 
   // Parse the message body and extract any invites
   const parsed = await simpleParser(messageBody);
-  const invites = parsed.attachments
+  const invites = await Promise.all(parsed.attachments
     .filter(({ contentType }) => contentType.startsWith(MIME_CALENDAR))
-    .map(({ content }) => content);
+    .map(({ content }) => restoreInvite(content)));
 
   if (invites.length) {
     // Create .ics files for each invite
-    const inviteFiles = await Promise.all(Object.entries(invites)
-      .map(async ([id, buffer]) => {
+    const inviteFiles = await Promise.all(
+      Object.entries(invites).map(async ([id, buffer]) => {
         const filename = `/tmp/invite-${id}.ics`;
         await writeFile(filename, buffer);
         return filename;
@@ -40,4 +45,30 @@ async function openInvites(messageBody) {
     // Open the invites
     exec(`open ${inviteFiles.join(' ')}`);
   }
+}
+
+const replacedFields = new Set(['LOCATION', 'DESCRIPTION']);
+
+// Restores the original content of the invite
+async function restoreInvite(buffer) {
+  const parsed = await parseICal(buffer);
+  for (const component of parsed.subComponents) {
+    for (const rawField of component.rawFields) {
+      if (replacedFields.has(rawField.key))
+        rawField.value = replaceSafeLinks(rawField.value);
+    }
+  }
+  return parsed.toString();
+}
+
+// Replaces Microsoft Safe Links by their destination
+function replaceSafeLinks(source) {
+  return source.replace(/https:\/\/[a-z0-9.]*safelinks.protection.outlook.com\/[^\s>\]]+/g, url => {
+    try {
+      const parsed = new URL(url);
+      url = parsed.searchParams.get('url') || url;
+    }
+    catch { /* ignore invalid URLs */ }
+    return url;
+  });
 }
