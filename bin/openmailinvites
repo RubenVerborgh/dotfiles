@@ -47,15 +47,21 @@ async function openInvites(messageBody) {
   }
 }
 
-const replacedFields = new Set(['LOCATION', 'DESCRIPTION']);
+const replacedFields = new Set([
+  'DESCRIPTION',
+  'LOCATION',
+  'SUMMARY',
+]);
 
 // Restores the original content of the invite
 async function restoreInvite(buffer) {
   const parsed = await parseICal(buffer);
   for (const component of parsed.subComponents) {
-    for (const rawField of component.rawFields) {
-      if (replacedFields.has(rawField.key))
-        rawField.value = replaceSafeLinks(rawField.value);
+    for (const raw of component.rawFields) {
+      if (replacedFields.has(raw.key)) {
+        raw.value = raw.value.replace(/^(FW:\s*)+/, '');
+        raw.value = replaceSafeLinks(raw.value);
+      }
     }
   }
   return parsed.toString();
