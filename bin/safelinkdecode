@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+const { replaceSafeLinks } = require('./util');
+
+const args = process.argv.slice(2);
+if (args.length !== 0) {
+  const source = `${args.join('\n')}\n`;
+  process.stdout.write(replaceSafeLinks(source));
+}
+else {
+  const chunks = [];
+  process.stdin.on('data', chunk => chunks.push(chunk));
+  process.stdin.on('end', () => {
+    const source = Buffer.concat(chunks).toString();
+    process.stdout.write(replaceSafeLinks(source));
+  });
+}

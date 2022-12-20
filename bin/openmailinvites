@@ -6,6 +6,7 @@ const { ICalParser } = require('cozy-ical');
 const { writeFile } = require('fs/promises');
 const { simpleParser } = require('mailparser');
 const { promisify } = require('util');
+const { replaceSafeLinks } = require('./util');
 
 const iCalParser = new ICalParser();
 const parseICal = promisify((s, cb) => iCalParser.parseString(s, cb));
@@ -65,16 +66,4 @@ async function restoreInvite(buffer) {
     }
   }
   return parsed.toString();
-}
-
-// Replaces Microsoft Safe Links by their destination
-function replaceSafeLinks(source) {
-  return source.replace(/https:\/\/[a-z0-9.]*safelinks.protection.outlook.com\/[^\s>\]]+/g, url => {
-    try {
-      const parsed = new URL(url);
-      url = parsed.searchParams.get('url') || url;
-    }
-    catch { /* ignore invalid URLs */ }
-    return url;
-  });
 }
