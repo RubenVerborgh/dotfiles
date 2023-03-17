@@ -12,11 +12,12 @@ echo "Checking if dotfiles are installed..."
 if [ ! -d "$DOTFILES_PATH" ]; then
   echo "Installing dotfiles..."
   echo mkdir -p "$(dirname $DOTFILES_PATH)"
-   GIT_TERMINAL_PROMPT=0 git clone --depth 1 $DOTFILES_REPO $DOTFILES_PATH || exit 1
+  GIT_TERMINAL_PROMPT=0 git clone --depth 1 $DOTFILES_REPO $DOTFILES_PATH || exit 1
 fi
 
 echo "Updating and installing dotfiles..."
 pushd "$DOTFILES_PATH"
+sed -E -ie 's,^(\turl = )https://github.com/,\1git@github.com:,' .git/config
 yes | ./install || exit 1
 popd
 
