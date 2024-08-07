@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+const { PDFDocument } = require('pdf-lib');
+const { readFile, writeFile } = require('node:fs/promises');
+
+// Parse arguments
+const args = process.argv.slice(2);
+if (args.length !== 3) {
+  process.stderr.write('Usage: pdf-recto-verso odd.pdf even-reverse.pdf out.pdf\n');
+  process.exit(1);
+}
+const [odd, evenReverse, output] = args;
+
+// Start main script
+merge(odd, evenReverse, output).catch(console.error);
+
+// Merges the odd and (reversed) even pages of two PDF files into a single PDF file
+async function merge(oddFile, evenReverseFile, outputFile) {
+  // Read odd and (reversed) even pages
+  const odd = await PDFDocument.load(await readFile(oddFile));
+  const evenReverse = await PDFDocument.load(await readFile(evenReverseFile));
+
+  // Ensure the lengths match up
+  const oddLength = odd.getPages().length;
+  const evenLength = evenReverse.getPages().length;
+  if (oddLength !== evenLength)
+    throw new Error(`Unexpected length difference: ${oddLength} versus ${evenLength}`);
+
+  // Merge the odd and even pages
+  const output = await PDFDocument.create();
+  for (let p = 0; p < oddLength; p++) {
+    output.addPage(...(await output.copyPages(odd, [p])));
+    output.addPage(...(await output.copyPages(evenReverse, [evenLength - p - 1])));
+  }
+
+  // Save the result
+  await writeFile(outputFile, await output.save());
+}
