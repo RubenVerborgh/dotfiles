@@ -52,6 +52,7 @@ set nofoldenable                     " Don't fold when opening
 set mouse=a                          " Enable mouse in all modes
 
 set spell                            " Always spell check
+set spelllang=en_us
 
 set completeopt=menu,popup           " Complete via menu and show popup
 
