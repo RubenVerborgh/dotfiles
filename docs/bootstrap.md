@@ -114,7 +114,7 @@ sudo setfacl -PRdm u::rwx,g::rwx,o::- .
 
 ## Node.js
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_20.x -o /tmp/nodesource_setup.sh
+curl -fsSL https://deb.nodesource.com/setup_22.x -o /tmp/nodesource_setup.sh
 sudo bash !$
 sudo apt install -y nodejs
 ```
