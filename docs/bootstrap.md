@@ -143,9 +143,12 @@ sudo ufw allow samba
 
 ```bash
 sudo adduser sambauser
+```
+```bash
 sudo usermod -a -G www-data sambauser
 sudo chgrp -R www-data /home/sambauser
 sudo chmod -R g+rws /home/sambauser
+sudo chmod g+x /home/sambauser
 sudo setfacl -PRdm u::rwx,g::rwx,o::- /home/sambauser
 cd /home/sambauser
 ```
