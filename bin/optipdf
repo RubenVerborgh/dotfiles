@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+for file in "$@"; do
+  [ -f "$file" ] || { echo "Skipping: '$file' is not a file" >&2; continue; }
+
+  before_size=$(stat -f%z "$file")
+  tmpfile="$(mktemp "/tmp/tmp.XXXXXX").pdf"
+
+  gs -q -dNOPAUSE -dBATCH -dSAFER \
+    -sDEVICE=pdfwrite \
+    -dCompatibilityLevel=1.5 \
+    -dEmbedAllFonts=true \
+    -dSubsetFonts=true \
+    -dAutoFilterColorImages=false \
+    -dAutoFilterGrayImages=false \
+    -dColorImageFilter=/DCTEncode \
+    -dGrayImageFilter=/DCTEncode \
+    -dDCTEncodeQuality=85 \
+    -dColorImageDownsampleType=/Bicubic -dColorImageResolution=192 \
+    -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=144 \
+    -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=144 \
+    -sOutputFile="$tmpfile" "$file"
+
+  if [ -s "$tmpfile" ]; then
+    mv "$tmpfile" "$file"
+    after_size=$(stat -f%z "$file")
+    echo "Compressed '$file': $((before_size / 1024)) Kb → $((after_size / 1024)) Kb"
+  else
+    echo "Failed to compress $file" >&2
+    rm -f "$tmpfile"
+  fi
+done
