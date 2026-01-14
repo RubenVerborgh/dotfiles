@@ -1,0 +1,68 @@
+#!/usr/bin/env node
+import { realpath, readFile } from 'fs/promises';
+import levenshtein from 'fastest-levenshtein';
+
+// Parse arguments
+const args = process.argv.slice(2);
+if (args.length < 2) {
+  process.stderr.write('Usage: rename-list order.txt file1 file2 file3...\n');
+  de
+  process.exit(1);
+}
+main(...args).catch(console.error);
+
+async function main(orderFile, ...files) {
+  process.stderr.write(`Received ${files.length} filenames.\n`);
+
+  const uniqueFiles = [...new Set(await Promise.all(files.map(f => realpath(f))))];
+  process.stderr.write(`Resolved to ${uniqueFiles.length} unique filenames.\n`);
+
+  const order = await readOrder(orderFile);
+  process.stderr.write(`Received ${order.length} order suggestions.\n`);
+
+  for (const file of uniqueFiles) {
+    const names = order.filter(o => !o.file).map(o => o.name);
+    if (names.length) {
+      const { match } = findBestMatch(file, names);
+      const item = order.filter(o => !o.file && o.name === match)[0];
+      item.file = file;
+    }
+  }
+
+  for (const item of order) {
+    if (item.file) {
+      const [path, name] = split(item.file);
+      const newName = `${path}${pad(item.order)} - ${name.replace(/^(\d+ - )+/, '')}`;
+      process.stdout.write(`mv "${escape(item.file)}" "${escape(newName)}"\n`);
+    }
+  }
+}
+
+async function readOrder(orderFile) {
+  const order = await readFile(orderFile, 'utf8');
+  const lines = order.split(/[\n\r]+/g).filter(l => !/^\s*$/.test(l));
+  return lines.map((n, i) => ({ name: n, order : i + 1, file: '' }));
+}
+
+function findBestMatch(filePath, options) {
+  const [, filename] = split(filePath);
+  const match = levenshtein.closest(filename, options);
+  const distance = levenshtein.distance(filename, match);
+  return { match, distance };
+}
+
+function split(filePath) {
+  const [, path, name ] = /^(.*\/)([^\/]+)$/.exec(filePath);
+  return [path, name];
+}
+
+function escape(string) {
+  return string.replace(/(["\\])/g, '\\$1');
+}
+
+function pad(number) {
+  const size = 3;
+  number = '' + number;
+  const diff = size - number.length;
+  return diff <= 0 ? number : [...new Array(diff).fill('0'), number].join('');
+}
