@@ -168,6 +168,7 @@ let g:vimtex_view_method = 'skim'
 let g:vimtex_view_skim_reading_bar = 1
 let g:vimtex_view_skim_no_select = 1
 nmap <leader>ls <plug>(vimtex-view)
+let g:vimtex_fold_enabled = 1
 
 " Various utilities
 Plug 'airblade/vim-rooter'
