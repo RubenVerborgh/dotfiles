@@ -108,6 +108,7 @@ Plug 'tpope/vim-commentary'
 xmap \\ <Plug>Commentary
 nmap \\ <Plug>CommentaryLine
 Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-titlecase'
 
 " Cycle through yanks on paste
 Plug 'svermeulen/vim-yoink'
