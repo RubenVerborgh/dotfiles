@@ -1,7 +1,7 @@
 # Bootstrapping Ubuntu / Raspberry Pi OS
 - Host: pibot
 - User: Ruben
-- SSH port: 2222
+- SSH port: 2244
 
 ## Connection and tools
 ### Install key
@@ -40,7 +40,7 @@ sudo vim /etc/ssh/sshd_config
 ```
 and change to:
 ```conf
-Port 2222
+Port 2244
 ```
 
 ```bash
@@ -63,7 +63,7 @@ to add/edit:
 Host pibot
   HostName 10.1.0.100
   User ruben
-  Port 2222
+  Port 2244
 ```
 
 ## Versioned configuration
