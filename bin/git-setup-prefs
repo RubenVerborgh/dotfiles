@@ -18,8 +18,8 @@ git config --global core.excludesFile "~/.gitignore"
 # Aliases
 git config --global alias.co    "checkout"
 git config --global alias.c     "commit"
-git config --global alias.ca    "commit -a"
-git config --global alias.cam   "commit -a -m"
+git config --global alias.ca    "commit --all"
+git config --global alias.cam   "commit --all -m"
 git config --global alias.cl    "clone"
 git config --global alias.clo   "clone"
 git config --global alias.clon  "clone"
@@ -37,7 +37,7 @@ git config --global alias.ps    "push"
 git config --global alias.pus   "push"
 git config --global alias.psh   "push"
 git config --global alias.rb    "rebase"
-git config --global alias.ada   "add --a"
+git config --global alias.ada   "add --all"
 
 # Color
 git config --global color.diff        auto
