@@ -150,7 +150,6 @@ Plug 'mattn/emmet-vim',                    { 'for': 'html' }
 Plug 'vim-scripts/JSON.vim',               { 'for': 'json' }
 Plug 'pangloss/vim-javascript',            { 'for': 'javascript' }
 Plug 'herringtondarkholme/yats',           { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi',                   { 'for': 'typescript' }
 Plug 'niklasl/vim-rdf'
 Plug 'rvesse/vim-sparql',                  { 'for': 'sparql' }
 Plug 'jparise/vim-graphql',                { 'for': 'graphql' }
