@@ -1,5 +1,8 @@
 priority 1
 
+
+# Inline
+
 snippet em "emphasize" w
 \\emph{${1:${VISUAL}}}
 endsnippet
@@ -19,6 +22,24 @@ endsnippet
 snippet ul "underline" w
 \\uline{${1:${VISUAL}}}
 endsnippet
+
+
+# Environments
+
+snippet draft "draft environment" b
+\begin{draft}
+${1:${VISUAL}}
+\end{draft}
+endsnippet
+
+snippet outline "outline environment" b
+\begin{outline}
+${1:${VISUAL}}
+\end{outline}
+endsnippet
+
+
+# Reviewing
 
 snippet td "todo" w
 \\todo{${1:${VISUAL}}}
