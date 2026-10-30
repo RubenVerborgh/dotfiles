@@ -4,6 +4,10 @@ export EDITOR=vim
 if hash mvim 2>/dev/null; then
   # In vim GUI, open multiple files in tabs by default
   alias mvim='mvim -p'
+elif hash gvim 2>/dev/null; then
+  # Use tabs and open wide enough
+  alias mvim='gvim'
+  alias gvim='gvim -p -geometry 100x40+400+200'
 else
   # If no GUI available, make the command an alias for regular vim
   alias mvim=vim
