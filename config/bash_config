@@ -13,12 +13,11 @@ export HISTIGNORE="&:l[sl]:[ ]*"
 # Fix forward-search-history (C-s) - http://nathanpowell.org/blog/archives/632
 stty stop undef
 
-# Informative prompt with git repository info
-if [ `uname` == "Darwin" ]; then
-  # On OS X, show host in blue.
+# Prompt for local machine
+if [ -z "$SSH_CONNECTION" ]; then
   PS1='\[\e[1;36m\]\h'
+# Prompt for remote machines
 else
-  # On Linux and others, show username and host in green.
   PS1='\[\e[1;32m\]\u@\h'
 fi
 PS1+=':\[\e[m\]\[\e[0;32m\]\W\[\e[m\]\[\e[0;31m\]$(__git_ps1)\[\e[m\]$ '
